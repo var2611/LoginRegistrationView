@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">LoginRegistrationView</string>
 
-    <string name="nameerror">EnteredNameIsWrong</string>
+    <string name="name_error">EnterValidName</string>
+    <string name="password_error">EnterValidPassword</string>
+    <string name="last_name_error">EnterValidLastName</string>
+    <string name="email_error">EnterValidEmail</string>
+    <string name="phone_error">EnterValidPhoneNum</string>
+
 </resources>

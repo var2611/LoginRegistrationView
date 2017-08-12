@@ -1,5 +1,6 @@
 package com.example.admin.loginregistrationview;
 
+import android.content.Intent;
 import android.media.MediaCodec;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 import java.util.regex.Pattern;
 
-public class Registration extends AppCompatActivity implements View.OnClickListener{
+public class Registration extends AppCompatActivity implements View.OnClickListener {
 
     EditText FN,LN,EM,PS,PS2,PN,DOB;
     String name,lname,email,password,cpassword,phonenumber,dob;
@@ -38,6 +39,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == submit){
             register();
+
         }
     }
     private void register() {
@@ -46,6 +48,9 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "RegistrationFail", Toast.LENGTH_SHORT).show();
         }
         else {
+            Intent i = new Intent(this,Status.class);
+            i.putExtra(name,"name");
+            startActivity(i);
 
         }
     }
@@ -64,23 +69,27 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     private boolean validate() {
         boolean valid =true;
         if (name.isEmpty()||name.length()>15){
-            FN.setError("EnterValidName");
+            FN.setError(getText(R.string.name_error));
             valid=false;
         }
         else if (lname.isEmpty()||name.length()>10){
-            FN.setError(R.string.nameerror);
+            LN.setError(getText(R.string.name_error));
             valid=false;
         }
         else if (email.isEmpty()||!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            FN.setError("EnterValidEmailAddress");
+            EM.setError(getText(R.string.email_error));
             valid=false;
         }
-        else if (name.isEmpty()||name.length()>25){
-            FN.setError("EnterValidName");
+        else if (password.isEmpty()||password.length()<6){
+            PS.setError(getText(R.string.password_error));
             valid=false;
         }
-        else if (name.isEmpty()||name.length()>25){
-            FN.setError("EnterValidName");
+        else if (cpassword.isEmpty()||cpassword.equals(password)){
+            PS2.setError(getText(R.string.password_error));
+            valid=false;
+        }
+        else if (phonenumber.isEmpty()||phonenumber.length()==10){
+            PN.setError("EnterValidName");
             valid=false;
         }
 
