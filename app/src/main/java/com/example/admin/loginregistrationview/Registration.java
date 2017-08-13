@@ -82,13 +82,13 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         } else if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             EM.setError(getText(R.string.email_error));
             valid = false;
-        } else if (password.isEmpty() || password.length() < 6) {
+        } else if (password.isEmpty() || password.length() < 5) {
             PS.setError(getText(R.string.password_error));
             valid = false;
         } else if (cpassword.isEmpty() || cpassword.equals(password)) {
             PS2.setError(getText(R.string.password_error));
             valid = false;
-        } else if (phonenumber.isEmpty() || phonenumber.length() == 10) {
+        } else if (phonenumber.isEmpty() || phonenumber.length() == 9) {
             PN.setError(getText(R.string.phone_error));
             valid = false;
         }

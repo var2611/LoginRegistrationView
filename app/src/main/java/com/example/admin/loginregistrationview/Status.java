@@ -26,7 +26,6 @@ public class Status extends AppCompatActivity {
         dob = i.getStringExtra("dob");
 
 
-
         FN.setText(name);
 
 
