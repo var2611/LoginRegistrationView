@@ -14,8 +14,8 @@ import java.util.regex.Pattern;
 
 public class Registration extends AppCompatActivity implements View.OnClickListener {
 
-    EditText FN,LN,EM,PS,PS2,PN,DOB;
-    String name,lname,email,password,cpassword,phonenumber,dob;
+    EditText FN, LN, EM, PS, PS2, PN, DOB;
+    String name, lname, email, password, cpassword, phonenumber, dob;
     Button submit;
 
     @Override
@@ -23,33 +23,38 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        FN = (EditText)findViewById(R.id.etFN);
-        LN = (EditText)findViewById(R.id.etLN);
-        EM = (EditText)findViewById(R.id.etEM);
-        PS = (EditText)findViewById(R.id.etPS);
-        PS2 = (EditText)findViewById(R.id.etPS2);
-        PN = (EditText)findViewById(R.id.etPN);
-        DOB = (EditText)findViewById(R.id.etDOB);
+        FN = (EditText) findViewById(R.id.etFN);
+        LN = (EditText) findViewById(R.id.etLN);
+        EM = (EditText) findViewById(R.id.etEM);
+        PS = (EditText) findViewById(R.id.etPS);
+        PS2 = (EditText) findViewById(R.id.etPS2);
+        PN = (EditText) findViewById(R.id.etPN);
+        DOB = (EditText) findViewById(R.id.etDOB);
 
-        submit = (Button)findViewById(R.id.Bsbmt);
+        submit = (Button) findViewById(R.id.Bsbmt);
         submit.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if (view == submit){
+        if (view == submit) {
             register();
 
         }
     }
+
     private void register() {
         initialize();
-        if (!validate()){
+        if (!validate()) {
             Toast.makeText(this, "RegistrationFail", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Intent i = new Intent(this,Status.class);
-            i.putExtra(name,"name");
+        } else {
+            Intent i = new Intent(this, Status.class);
+            i.putExtra("name", name);
+            i.putExtra("lname", lname);
+            i.putExtra("email", email);
+            i.putExtra("password", password);
+            i.putExtra("phone_number", phonenumber);
+            i.putExtra("dob", dob);
             startActivity(i);
 
         }
@@ -67,30 +72,25 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
     }
 
     private boolean validate() {
-        boolean valid =true;
-        if (name.isEmpty()||name.length()>15){
+        boolean valid = true;
+        if (name.isEmpty() || name.length() > 15) {
             FN.setError(getText(R.string.name_error));
-            valid=false;
-        }
-        else if (lname.isEmpty()||name.length()>10){
+            valid = false;
+        } else if (lname.isEmpty() || name.length() > 10) {
             LN.setError(getText(R.string.name_error));
-            valid=false;
-        }
-        else if (email.isEmpty()||!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            valid = false;
+        } else if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             EM.setError(getText(R.string.email_error));
-            valid=false;
-        }
-        else if (password.isEmpty()||password.length()<6){
+            valid = false;
+        } else if (password.isEmpty() || password.length() < 6) {
             PS.setError(getText(R.string.password_error));
-            valid=false;
-        }
-        else if (cpassword.isEmpty()||cpassword.equals(password)){
+            valid = false;
+        } else if (cpassword.isEmpty() || cpassword.equals(password)) {
             PS2.setError(getText(R.string.password_error));
-            valid=false;
-        }
-        else if (phonenumber.isEmpty()||phonenumber.length()==10){
-            PN.setError("EnterValidName");
-            valid=false;
+            valid = false;
+        } else if (phonenumber.isEmpty() || phonenumber.length() == 10) {
+            PN.setError(getText(R.string.phone_error));
+            valid = false;
         }
 
         return valid;
