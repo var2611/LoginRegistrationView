@@ -62,12 +62,34 @@
         android:hint="@string/phone_number"
         android:inputType="phone" />
 
+    <!--<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_date" />
+
+        <TextView
+            android:id="@+id/tvDOB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/date_of_birth" />
+
+    </LinearLayout>-->
     <EditText
         android:id="@+id/etDOB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:hint="@string/date_of_birth" />
+        android:editable="false"
+        android:clickable="true"
+        android:hint="@string/date_of_birth"/>
 
     <Button
         android:id="@+id/Bsbmt"

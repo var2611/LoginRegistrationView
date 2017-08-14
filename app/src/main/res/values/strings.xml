@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">LoginRegistrationView</string>
+    <string name="registration_page">Registration</string>
+    <string name="status_page">Status</string>
+
 
 
     <string name="name_error">EnterValidName</string>
-    <string name="password_error">EnterValidPassword</string>
+    <string name="password_error_2">Password Does Not Match</string>
+    <string name="password_error">Enter Password AtLeast 6 Character</string>
     <string name="last_name_error">EnterValidLastName</string>
     <string name="email_error">EnterValidEmail</string>
     <string name="phone_error">EnterValidPhoneNum</string>
@@ -15,5 +19,7 @@
     <string name="phone_number">PhoneNumber</string>
     <string name="date_of_birth">DateOfBirth</string>
     <string name="submit">Submit</string>
+    <string name="name">Name</string>
+    <string name="select_date">Select Date</string>
 
 </resources>
