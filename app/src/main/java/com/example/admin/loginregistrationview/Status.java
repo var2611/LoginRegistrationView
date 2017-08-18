@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class Status extends AppCompatActivity {
-    TextView FN, LN, EM, PS, PN, DOB;
-    String name, lname, email, password, phonenumber, dob;
+    TextView FN, LN, EM, PS, PN, DOB, CITY, SEX;
+    String name, lname, email, password, phonenumber, dob, city, sex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ public class Status extends AppCompatActivity {
         PS = (TextView) findViewById(R.id.tv_ps);
         PN = (TextView) findViewById(R.id.tv_pn);
         DOB = (TextView) findViewById(R.id.tv_db);
+        CITY = (TextView) findViewById(R.id.tv_ct);
+        SEX = (TextView) findViewById(R.id.tv_sx);
 
         Intent i = getIntent();
 
@@ -29,6 +31,8 @@ public class Status extends AppCompatActivity {
         password = i.getStringExtra("password");
         phonenumber = i.getStringExtra("phone_number");
         dob = i.getStringExtra("dob");
+        sex = i.getStringExtra("sex");
+        city = i.getStringExtra("city");
 
 
         FN.setText(name);
@@ -37,6 +41,8 @@ public class Status extends AppCompatActivity {
         PS.setText(password);
         PN.setText(phonenumber);
         DOB.setText(dob);
+        CITY.setText(city);
+        SEX.setText(sex);
 
     }
 }

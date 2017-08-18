@@ -21,5 +21,9 @@
     <string name="submit">Submit</string>
     <string name="name">Name</string>
     <string name="select_date">Select Date</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="sex">Sex</string>
+    <string name="city">City</string>
 
 </resources>
