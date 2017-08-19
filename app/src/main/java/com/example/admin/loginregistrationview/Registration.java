@@ -67,7 +67,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         submit.setOnClickListener(this);
 
 
-        ArrayList<String> cities=new ArrayList<>();
+        ArrayList<String> cities = new ArrayList<>();
 
         cities.add("Ahmedabad");
         cities.add("Gandhinagar");
@@ -80,7 +80,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         cities.add("Ahmedabad");
         cities.add("Ahmedabad");
 
-        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,cities);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, cities);
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(this);
     }
@@ -113,10 +113,11 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
             i.putExtra("lname", lname);
             i.putExtra("email", email);
             i.putExtra("password", password);
+            i.putExtra("password2", cpassword);
             i.putExtra("phone_number", phonenumber);
             i.putExtra("dob", dob);
-            i.putExtra("city",city);
-            i.putExtra("sex",sex);
+            i.putExtra("city", city);
+            i.putExtra("sex", sex);
             startActivity(i);
 
         }
@@ -136,11 +137,25 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
 
     private boolean validate() {
         boolean valid = true;
-        if (name.isEmpty() || lname.isEmpty() || email.isEmpty() || password.isEmpty() || phonenumber.isEmpty()) {
-
-            Toast.makeText(this, "Enter In Empty Field", Toast.LENGTH_SHORT).show();
+        if (name.isEmpty()) {
+            FN.setError("First Name is empty");
             valid = false;
-        } else if (name.length() > 15) {
+        }else if (lname.isEmpty()) {
+            LN.setError("Last Name is empty");
+            valid = false;
+        }else if (email.isEmpty()) {
+            EM.setError("Email is empty");
+            valid = false;
+        }else if (password.isEmpty()) {
+            PS.setError("Password is empty");
+            valid = false;
+        }else if (cpassword.isEmpty()) {
+            PS2.setError("Password is empty");
+            valid = false;
+        }else if (phonenumber.isEmpty()) {
+            PN.setError("PhoneNumber is empty");
+            valid = false;
+        }else if (name.length() > 15) {
             FN.setError(getText(R.string.name_error));
             valid = false;
         } else if (name.length() > 10) {
@@ -152,13 +167,16 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
         } else if (password.length() < 5) {
             PS.setError(getText(R.string.password_error));
             valid = false;
-        }/* else if (!PS2.getText().toString().equals(PN.getText().toString())) {
+        } else if (!PS2.getText().toString().equals(PS.getText().toString())) {
             PS2.setError(getText(R.string.password_error_2));
-            valid = false;*/ else if (!Patterns.PHONE.matcher(phonenumber).matches()) {
+            valid = false;
+        } else if (PN.getText().toString().length()!=10) {
             PN.setError(getText(R.string.phone_error));
             valid = false;
         }
 
+        /*Toast.makeText(this, "Enter In Empty Field", Toast.LENGTH_SHORT).show();
+            valid = false;*/
         return valid;
 
     }
@@ -173,7 +191,7 @@ public class Registration extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        city =(String) adapterView.getSelectedItem();
+        city = (String) adapterView.getSelectedItem();
     }
 
     @Override

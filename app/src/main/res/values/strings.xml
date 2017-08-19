@@ -13,17 +13,29 @@
     <string name="phone_error">EnterValidPhoneNum</string>
     <string name="first_name">FirstName</string>
     <string name="last_name">LastName</string>
-    <string name="email_address">EmailAddress</string>
-    <string name="password">Password</string>
     <string name="confirm_password">ConfirmPassword</string>
-    <string name="phone_number">PhoneNumber</string>
-    <string name="date_of_birth">DateOfBirth</string>
     <string name="submit">Submit</string>
-    <string name="name">Name</string>
     <string name="select_date">Select Date</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="sex">Sex</string>
-    <string name="city">City</string>
+    <string name="sex">Sex :- </string>
+    <string name="city">City :- </string>
+    <string name="email_address">EmailAddress :- </string>
+    <string name="password">Password :- </string>
+    <string name="phone_number">PhoneNumber :- </string>
+    <string name="date_of_birth">DateOfBirth :- </string>
+    <string name="name">Name :- </string>
+
+    <string name="sex1">Sex</string>
+    <string name="city1">City</string>
+    <string name="email_address1">EmailAddress</string>
+    <string name="password1">Password</string>
+    <string name="phone_number1">PhoneNumber</string>
+    <string name="date_of_birth1">DateOfBirth</string>
+    <string name="name1">Name</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="gender">Gender :- </string>
+
 
 </resources>

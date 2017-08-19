@@ -4,45 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
     android:gravity="center"
     android:orientation="vertical"
-    android:weightSum="10"
+    android:weightSum="16"
     tools:context="com.example.admin.loginregistrationview.Status">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:gravity="center"
+        android:weightSum="2">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/name"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
+        <EditText
             android:id="@+id/tv_fn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:editable="false"
+            android:hint="@string/first_name" />
 
-        <TextView
+        <EditText
             android:id="@+id/tv_ln"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:editable="false"
+            android:hint="@string/last_name" />
 
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sex"
-            android:textSize="24sp"
+            android:text="@string/gender"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -55,98 +61,105 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/city"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_ct"
+            android:id="@+id/tv_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/tv_em"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:editable="false"
+        android:hint="@string/email_address1" />
+
+    <EditText
+        android:id="@+id/tv_ps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:editable="false"
+        android:hint="@string/password1" />
+
+    <EditText
+        android:id="@+id/tv_ps2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:editable="false"
+        android:hint="@string/confirm_password" />
+
+    <EditText
+        android:id="@+id/tv_pn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:editable="false"
+        android:hint="@string/phone_number1" />
+
+    <!--<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_date" />
+
+        <TextView
+            android:id="@+id/tvDOB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/date_of_birth" />
+
+    </LinearLayout>-->
+    <EditText
+        android:id="@+id/tv_db"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:editable="false"
+        android:hint="@string/date_of_birth1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
-        <TextView
+        <Button
+            android:id="@+id/Bback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email_address"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:text="@string/back" />
 
-        <TextView
-            android:id="@+id/tv_em"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        <TextView
+        <Button
+            android:id="@+id/Bsbmt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/password"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_ps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:text="@string/next" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/phone_number"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_pn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/date_of_birth"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_db"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
 
 
 </LinearLayout>
